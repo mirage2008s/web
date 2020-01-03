@@ -1,0 +1,14 @@
+jQuery: Change Text Inside an Element Using jQuery:
+- $("h3").html("<em>jQuery Playground</em>");
+- jQuery also has a similar function called .text() that only alters text without adding tags. 
+In other words, this function will not evaluate any HTML tags passed to it, but will instead treat it as the text you want to replace the existing content with.
+
+- remove() elememt
+- Use appendTo to Move Elements with jQuery
+- Clone an Element Using jQuery
+- Target the Parent of an Element Using jQuery
+- Target the Children of an Element Using jQuery
+- Target nth.chirld(x), :odd or :even
+
+
+

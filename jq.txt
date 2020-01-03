@@ -1,0 +1,163 @@
+JQuery basic
+1. A string in JavaScript is an immutable object that contains none, one or many characters.
+2. Numbers in JavaScript are double-precision 64-bit format IEEE 754 values. They are immutable, just as strings. 
+3. A boolean in JavaScript can be either true or false. If a number is zero, it defaults to false. If an empty string defaults to false.
+4. JavaScript supports Object concept very well. You can create an object using the object literal as follows:
+	var emp = {
+   name: "Zara",
+   age: 10
+};
+// Getting object properties
+emp.name  // ==> Zara
+emp.age   // ==> 10
+
+// Setting object properties
+emp.name = "Daisy"  // <== Daisy
+emp.age  =  20      // <== 20
+5. A function in JavaScript can be either named or anonymous
+
+var handler = function (){
+   // do some stuff here
+}
+
+$(document).ready(function(){
+   // do some stuff here
+});
+6. Arguments -doi so: JavaScript variable arguments is a kind of array which has length property.
+function func(x){
+   console.log(typeof x, arguments.length);
+}
+
+func();                //==> "undefined", 0
+func(1);               //==> "number", 1
+func("1", "2", "3");   //==> "string", 3
+
+7. Context
+JavaScript famous keyword this always refers to the current context. 
+Within a function this context can change, depending on how the function is called
+In JavaScript all functions are object methods.
+
+The this Keyword
+In a function definition, this refers to the "owner" of the function.
+
+In the example above, this is the person object that "owns" the fullName function.
+
+In other words, this.firstName means the firstName property of this object.
+ - It can be used to invoke (call) a method with an owner object as an argument (parameter).
+ vd: var person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+person.fullName.call(person1); // John Doe
+ - With call(), an object can use a method belonging to another object.
+
+The difference is:
+
+The call() method takes arguments separately.
+
+The apply() method takes arguments as an array.
+8. JQuery Selector
+JQuery Selector la mot function dung de tim elements tu mot DOM > select one or more HTML elements su dung JQuery.
+Khi da select elememt > ta co the thuc thi operation.
+ - The $() factory function
+ 1. Tag name: $('p') selects all paragraphs <p> in the document.
+ 2. Tag ID: $('#some-id') selects the single element in the document that has an ID of some-id.
+ 3. Tag Class: $('.some-class') selects all elements in the document that have a class of some-class.
+$("*")	Selects all elements	
+$(this)	Selects the current HTML element	
+$("p.intro")	Selects all <p> elements with class="intro"	
+$("p:first")	Selects the first <p> element	
+$("ul li:first")	Selects the first <li> element of the first <ul>	
+$("ul li:first-child")	Selects the first <li> element of every <ul>	
+$("[href]")	Selects all elements with an href attribute	
+$("a[target='_blank']")	Selects all <a> elements with a target attribute value equal to "_blank"	
+$("a[target!='_blank']")	Selects all <a> elements with a target attribute value NOT equal to "_blank"	
+$(":button")	Selects all <button> elements and <input> elements of type="button"	
+$("tr:even")	Selects all even <tr> elements	
+$("tr:odd")	Selects all odd <tr> elements
+
+9. JQuery Attribute
+Some of the most basic components we can manipulate when it comes to DOM elements are the properties and attributes assigned to those elements.
+Most of these attributes are available through JavaScript as DOM node properties. Some of the more common properties are -
+className
+tagName
+id
+href
+title
+rel
+src
+ + Get Attribute Value: attr() method:  fetch the value of an attribute from the first element in the matched set or set attribute values onto all matched elements.
+ + Set Attribute Value: attr(name, value)
+ + addClass( classes ) > apply style
+10.
+
+========================NEXT CHAPTER====================
+$("input").event(function(){
+  $(this).hide();
+});
+
+$("p").on({
+  mouseenter: function(){
+    $(this).css("background-color", "lightgray");
+  },
+  mouseleave: function(){
+    $(this).css("background-color", "lightblue");
+  },
+  click: function(){
+    $(this).css("background-color", "yellow");
+  }
+});
+
+
+1. jQuery - Events Handling
+A mouse click
+A web page loading
+Taking mouse over an element
+Submitting an HTML form
+A keystroke on your keyboard, etc.
+ + Binding Event Handlers:
+ selector.bind( eventType[, eventData], handler)
+  - eventType - A string containing a JavaScript event type, such as click or submit. Refer to the next section for a complete list of event types.
+  - eventData - This is optional parameter is a map of data that will be passed to the event handler.
+  - handler - A function to execute each time the event is triggered.
+ + Unbind
+  - selector.unbind(eventType) or selector.unbind(eventType, handler) :handler - If provided, identifies the specific listener that's to be removed.
+ + Event Types
+  - resize, click, blur, submit,...
+ + The Event Attributes
+  - altKey, crlKey, pageX ... target
+ + The Event Methods
+  - preventDefault(): Prevents the browser from executing the default action.
+
+2. jQuery - DOM Manipulation
+Content Manipulation: 
+- selector.html( ) : $("div").click(function () {
+               var content = $(this).html();
+               $("#result").text( content );
+- DOM Element Replacement: selector.replaceWith( content )
+- Removing DOM Elements: selector.remove( [ expr ]) or selector.empty( )
+- Inserting DOM Elements: selector.after( content ) or selector.before( content )
+- DOM Manipulation Methods: after( content ),append( content ),appendTo( selector )...
+
+3. jQuery - Effects
++ Showing and Hiding Elements: show(), hide()
+[selector].show( speed, [callback] ):("slow", "normal", or "fast") or the number of milliseconds to run the animation.
+callback - This optional parameter represents a function to be executed whenever the animation completes; executes once for each element animated against.
++ Toggling the Elements
+
+
+=====
+JQuery get content:
+- text() - Sets or returns the text content of selected elements
+- html() - Sets or returns the content of selected elements (including HTML markup)
+- val() - Sets or returns the value of form fields
+attr() method is used to get attribute values.The jQuery attr() method is also used to set/change attribute values.
+
+
+
+
